@@ -1,0 +1,105 @@
+{
+    "Policy": {
+        "Id": "Test 1",
+        "Version": "1.0",
+        "CombinerId": "Comb",
+        "Desc": "Desc",
+        "Target": "",
+        "Vars": "",
+        "CombinerArgs": [
+            {
+                "Policy": {
+                    "Id": "Test pol 1",
+                    "Version": "1",
+                    "CombinerId": "Cimbu",
+                    "Desc": "Blub",
+                    "Target": [
+                        [
+                            [
+                                {
+                                    "MatchFunc": "urn:oasis:names:tc:xacml:1.0:function:string-equal",
+                                    "MatchedValue": "ID 1",
+                                    "AttributeDesignator": {
+                                        "Category": "urn:oasis:names:tc:xacml:3.0:attribute-category:resource",
+                                        "AttributeId": "urn:oasis:names:tc:xacml:1.0:resource:resource-id",
+                                        "DataType": "http://www.w3.org/2001/XMLSchema#string",
+                                        "MustBePresent": "true"
+                                    }
+                                }
+                            ]
+                        ]
+                    ],
+                    "Vars": [],
+                    "CombinerArgs": [
+                        {
+                            "Rule": {
+                                "Id": "1.234",
+                                "Effect": "None",
+                                "Desc": "Rule1",
+                                "Target": [
+                                    [
+                                        [
+                                            {
+                                                "MatchFunc": "urn:oasis:names:tc:xacml:1.0:function:string-equal",
+                                                "MatchedValue": "Target rule",
+                                                "AttributeDesignator": {
+                                                    "Category": "urn:oasis:names:tc:xacml:3.0:attribute-category:resource",
+                                                    "AttributeId": "urn:thales:xacml:2.0:resource:sub-resource-id",
+                                                    "DataType": "http://www.w3.org/2001/XMLSchema#string",
+                                                    "MustBePresent": "true"
+                                                }
+                                            }
+                                        ]
+                                    ],
+                                    [
+                                        [
+                                            {
+                                                "MatchFunc": "urn:oasis:names:tc:xacml:1.0:function:string-equal",
+                                                "MatchedValue": "action man",
+                                                "AttributeDesignator": {
+                                                    "Category": "urn:oasis:names:tc:xacml:3.0:attribute-category:action",
+                                                    "AttributeId": "urn:oasis:names:tc:xacml:1.0:action:action-id",
+                                                    "DataType": "http://www.w3.org/2001/XMLSchema#string",
+                                                    "MustBePresent": "true"
+                                                }
+                                            }
+                                        ]
+                                    ]
+                                ],
+                                "Condition": {
+                                    "FuncCall": {
+                                        "FuncId": "squared",
+                                        "ArgExprs": [
+                                            {
+                                                "Func": "urn:oasis:names:tc:xacml:1.0:function:string-equal"
+                                            },
+                                            {
+                                                "Const": {
+                                                    "Value": "Brian",
+                                                    "DataType": "http://www.w3.org/2001/XMLSchema#string"
+                                                },
+                                                "Category": "Person",
+                                                "AttributeId": "fifteen"
+                                            },
+                                            {
+                                                "AttributeDesignator": {
+                                                    "Category": "urn:oasis:names:tc:xacml:1.0:subject-category:access-subject",
+                                                    "AttributeId": "urn:oasis:names:tc:xacml:2.0:subject:role",
+                                                    "DataType": "http://www.w3.org/2001/XMLSchema#string",
+                                                    "MustBePresent": "false"
+                                                }
+                                            }
+                                        ]
+                                    }
+                                },
+                                "PepActionExprs": []
+                            }
+                        }
+                    ],
+                    "PepActionExprs": []
+                }
+            }
+        ],
+        "PepActionExprs": []
+    }
+}
